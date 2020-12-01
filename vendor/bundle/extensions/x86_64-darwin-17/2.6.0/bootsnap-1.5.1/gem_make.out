@@ -1,0 +1,15 @@
+current directory: /Users/takairasatoru/rails_app/Doggy_Buddy/vendor/bundle/gems/bootsnap-1.5.1/ext/bootsnap
+/Users/takairasatoru/.rbenv/versions/2.6.6/bin/ruby -I /Users/takairasatoru/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201201-6321-1g79j6h.rb extconf.rb
+creating Makefile
+
+current directory: /Users/takairasatoru/rails_app/Doggy_Buddy/vendor/bundle/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/takairasatoru/rails_app/Doggy_Buddy/vendor/bundle/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/takairasatoru/rails_app/Doggy_Buddy/vendor/bundle/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20201201-6321-o6ih5c/bootsnap
