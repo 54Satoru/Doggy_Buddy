@@ -1,0 +1,46 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <%= link_to root_path, class: "navbar-brand text-success font-weight-bold" do %>
+      <i class="fas fa-paw"></i> DoggyBuddy
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <%= link_to "#", class: "nav-link text-success" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        </li>
+
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to  "#", class: "nav-link text-success" do %>
+              <i class="fas fa-paper-plane"></i>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to  "#", class: "nav-link text-success" do %>
+              <i class="fas fa-bell"></i>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link text-success" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "新規登録", new_user_registration_path, class: "nav-link text-success" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログイン", new_user_session_path, class: "nav-link text-success" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ゲストログイン", "#", class: "nav-link text-success" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>

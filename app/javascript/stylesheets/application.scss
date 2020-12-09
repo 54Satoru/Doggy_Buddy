@@ -1,0 +1,108 @@
+@import '~bootstrap/scss/bootstrap';
+@import "bootstrap";
+
+body {
+  background-color: #f8f9fa;
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 80px 0 112px;
+}
+
+footer {
+  height: 56px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.centered {
+  text-align: center;
+}
+
+/*bootstrap*/
+.navbar {
+  padding: 0.5rem 4rem;
+}
+
+.fa-edit, .fa-paper-plane,
+.fa-bell {
+  font-size: 20px !important;
+}
+
+.text-success {
+  color: #00bf8f !important;
+}
+
+.text-success:hover {
+  color: #01916d;
+}
+
+.btn-lg {
+  line-height: 1;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #00bf8f;
+  border-color: #00bf8f;;
+}
+
+/* フォーム */
+.field-mt, .actions-mt {
+  margin-top: 24px;
+}
+
+#user_username, #user_email,
+#user_password, #user_password_confirmation {
+  width: 100%;
+}
+
+.actions input {
+  width: 100%;
+  color: rgb(0, 191, 143);
+  background-color: white;
+  border: solid 2px #00bf8f;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.form-col a {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+
+/* フラッシュメッセージ*/
+.alert {
+  padding: 6px 0;
+  margin: 0;
+}
+
+/* フッター */
+#copyrights {
+  padding: 16px 0;
+  text-align: center;
+  p {
+    margin: 0;
+  }
+}
+
+
+/* レスポンシブ */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+  #copyrights {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,79 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.top {
+  background: image-url('top.jpg');
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  min-height: 90vh;
+  width: 100%;
+}
+
+.top-inner {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  padding: 40vh 0 0;
+}
+
+.top-btn a {
+  margin: 1rem;
+}
+
+.sinfo {
+  color: #727272;
+  padding-bottom: 56px;
+}
+
+.sinfo-title {
+  margin: 61px auto;
+}
+
+.sinfo .col-lg-4 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sinfo h6 {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 16px;
+}
+
+.sinfo p {
+  padding-top: 12px;
+}
+
+hr {
+  margin-bottom: 3rem !important;
+}
+
+@media (max-width: 992px) {
+  .sinfo-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top {
+    min-height: 40vh;
+  }
+
+  .top-inner {
+    padding: 22vh 0 0;
+  }
+
+  .top-text {
+    display: none;
+  }
+
+  .top-btn a {
+    margin: 0;
+  }
+
+  .sinfo-title {
+    font-size: 1.2rem;
+  }
+}
