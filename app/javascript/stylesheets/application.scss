@@ -53,13 +53,22 @@ footer {
 }
 
 /* フォーム */
-.field-mt, .actions-mt {
+.field-mt, .actions-mt, .button_to {
   margin-top: 24px;
 }
 
 #user_username, #user_email,
-#user_password, #user_password_confirmation {
+#user_password, #user_password_confirmation,
+#user_current_password {
   width: 100%;
+}
+
+.mgb0 label {
+  margin-bottom: auto;
+}
+
+.field span {
+  font-size: 12px;
 }
 
 .actions input {
@@ -67,6 +76,15 @@ footer {
   color: rgb(0, 191, 143);
   background-color: white;
   border: solid 2px #00bf8f;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.button_to input {
+  width: 50%;
+  color: white;
+  background-color:#dc3545;
+  border: solid 2px #dc3545;
   border-radius: 2px;
   padding: 2px;
 }
