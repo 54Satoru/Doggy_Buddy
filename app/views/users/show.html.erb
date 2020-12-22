@@ -1,2 +1,85 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<main role="main" class="flex-shrink-0">
+  <div class="users-profile-wrap">
+    <div class="container hero-container">
+      <div class="users-profile-hero-wrap">
+        <div class="users-profile-hero-row row">      
+          <div class="users-profile-main-image text-center col-md-4">
+          <%# 投稿者画像 %>
+            <% if @user.image? %>
+              <%= image_tag @user.image.url %>
+            <% else %>
+              <%= image_tag "/assets/default.png", :size => '160x160' %>
+            <% end %>
+          </div>
+
+          <div class="users-summary-col col-md-4">
+              <%# 投稿者名前 %>
+            <div class="users-name">
+              <h3 class="font-weight-bold"><%= @user.username %></h3>
+            </div>
+
+              <%# レビュー機能 %>
+            <div class="users-reviews">
+              ☆☆☆☆☆(5)
+            </div>
+
+              <%# フォロー・フォロワー %>
+            <div class="users-follow-wrap">
+              <div class="users-follow">
+                6 follow
+              </div>
+              <div class="users-follower">
+                4 follower
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-favorite-wrap col-md-4">
+              <%# トークルームボタン %>
+            <div class="contact-btn-col">
+              <button>
+                コンタクトをとる
+              </button>
+            </div>
+
+              <%# フォローボタン %>
+            <div class="favorite-btn-col">
+              <button>
+                フォローする
+              </button>
+            </div>
+          </div>
+        </div>
+
+      <div class="container profile-container">
+          <%# プロフィール %>
+        <div class="users-profile">
+          <%= @user.profile %>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="users-profile-item-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="users-profile-item-card">
+            <div class="users-item-wrap">
+              <div class="users-item-title">
+                投稿一覧
+              </div>
+              <div class="users-item-title">
+                投稿一覧
+              </div>
+              <div class="users-item-title">
+                投稿一覧
+              </div>
+            </div>
+          </div>
+        <div class="col-md-8"></div>
+      </div>
+    </div>
+  </div>
+</main>

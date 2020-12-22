@@ -1,19 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: [:index, :new, :create]
-
-  def index
-    @users = User.all
-  end
-
-  def new
-  end
-
-  def create
-    @user = User.new(user_params)
-    @user.save
-  end
+  before_action :authenticate_user!, except: [:show]
   
   def show
+    @user = User.find(params[:id])
   end
   
   def edit
@@ -24,20 +13,20 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to root_path, notice: "success"
+      redirect_to @user, notice: "プロフィールの編集に成功しました！！"
     else
-      flash[:alert] = "save error"
+      flash[:alert] = "プロフィールの編集に失敗しました！！"
       render :edit
     end
   end
 
   private
-  def user_params
-    params.require(:user).permit(:name, :email, :image)
-  end
+    def user_params
+      params.require(:user).permit(:name, :email, :image, :remove_image, :profile)
+    end
 
-  def set_user
-    @user = User.find(params[:id])
-  end
+    def set_user
+      @user = User.find(params[:id])
+    end
 
 end

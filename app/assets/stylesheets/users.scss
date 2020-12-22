@@ -1,3 +1,55 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+img {
+  background-size: cover;
+  object-fit: cover;
+  border-radius: 50%;
+  border: solid 4px #00bf8f !important;
+  width: 160px;
+  height: 160px;
+}
+
+.users-summary-col, .contact-favorite-wrap {
+  padding: 18px 0;
+}
+
+.users-reviews, .users-follow-wrap {
+  margin-bottom: 0.5rem;
+}
+
+.users-follow-wrap {
+  display: flex;
+}
+
+.users-profile {
+  padding: 30px 60px;
+}
+
+.users-profile-item-card {
+  margin-left: auto;
+  max-width: 18rem;
+  border-radius: 8px;
+  background-color: #f4f5f6;
+}
+
+.users-item-wrap {
+  padding: 10px 24px 32px;
+}
+
+@media (max-width: 992px) {
+  .users-profile {
+    padding: 30px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .users-summary-col, .contact-favorite-wrap {
+    text-align: center;
+  }
+
+  .users-follow-wrap, .contact-favorite-wrap  {
+    justify-content: center;
+  }
+}
