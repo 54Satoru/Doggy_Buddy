@@ -57,10 +57,14 @@ footer {
   margin-top: 24px;
 }
 
-#user_username, #user_email,
+#user_username, #user_email, #user_profile,
 #user_password, #user_password_confirmation,
 #user_current_password {
   width: 100%;
+}
+
+#user_profile {
+  min-height: 80px;
 }
 
 .mgb0 label {
@@ -69,6 +73,18 @@ footer {
 
 .field span {
   font-size: 12px;
+}
+
+// input#file-upload-button {
+//   color: rgb(0, 191, 143);
+//   background-color: white;
+//   border: solid 2px #00bf8f;
+//   border-radius: 2px;
+//   padding: 2px;
+// }
+
+#image-btn-remove {
+  margin-top: 6px;
 }
 
 .actions input {
