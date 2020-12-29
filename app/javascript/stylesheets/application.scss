@@ -34,12 +34,16 @@ footer {
   font-size: 20px !important;
 }
 
-.text-success {
+.text-success, .title-color {
   color: #00bf8f !important;
 }
 
 .text-success:hover {
   color: #01916d;
+}
+
+.title-color {
+  font-weight: bold;
 }
 
 .btn-lg {
@@ -57,9 +61,7 @@ footer {
   margin-top: 24px;
 }
 
-#user_username, #user_email, #user_profile,
-#user_password, #user_password_confirmation,
-#user_current_password {
+.field-mt input, .field-mt textarea, .field-mt select {
   width: 100%;
 }
 
@@ -72,16 +74,21 @@ footer {
 }
 
 .field span {
-  font-size: 12px;
+  font-size: 10px;
 }
 
-// input#file-upload-button {
-//   color: rgb(0, 191, 143);
-//   background-color: white;
-//   border: solid 2px #00bf8f;
-//   border-radius: 2px;
-//   padding: 2px;
-// }
+.field .required {
+  background-color: #00bf8f;
+  color: white;
+  font-size: 0.8rem;
+  padding: 3px 4px;
+  margin-left: 4px;
+  border-radius: 3px;
+}
+
+.field select {
+  padding: 6px 0;
+}
 
 #image-btn-remove {
   margin-top: 6px;
@@ -138,5 +145,9 @@ footer {
 @media (max-width: 576px) {
   #copyrights {
     font-size: 0.8rem;
+  }
+
+  .title-color {
+    font-size: 1.5rem;
   }
 }
