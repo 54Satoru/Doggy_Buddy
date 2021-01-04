@@ -1,4 +1,4 @@
-class PostC < ApplicationRecord
+class PostSitter < ApplicationRecord
   mount_uploader :image, ImageUploader
   belongs_to :user
   

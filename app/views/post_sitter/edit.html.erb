@@ -1,0 +1,53 @@
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="form-col col-md-7 col-lg-5">
+        <h2 class="text-center title-color">投稿内容を編集する</h2>
+
+        <%= form_with(model: @post, url: "/post_sitter/#{@post.id}", local: true) do |f| %>
+
+          <div class="field field-mt">
+            <%= f.label :タイトル %><span class="required">必須</span><br />
+            <%= f.text_field :title, autofocus: true %>
+          </div>
+          
+          <div type="button" class="image-btn field-mt">
+            <%= f.label :画像 %><br />
+            <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+          </div>
+
+          <div class="field field-mt">
+            <%= f.label :お住まいの地域 %><span class="required">必須</span><br />
+            <%= f.text_field :region %>
+          </div>
+
+          <div class="field field-mt">
+            <%= f.label :希望日時 %><span class="required">必須</span><br />
+            <%= f.text_field :datetime %>
+          </div>
+
+          <div class="field field-mt">
+            <%= f.label :希望料金 %><span class="required">必須</span><br />
+            <%= f.text_field :price %>
+          </div>
+
+          <div class="field field-mt">
+            <%= f.label :お支払い方法 %><span class="required">必須</span><br />
+            <%= f.select :payment, ["現地でお支払い", "事前振り込み", "事後振り込み"], :prompt => "選択してください" %>
+          </div>
+
+          <div class="field field-mt">
+            <%= f.label :リクエスト内容 %><span class="required">必須</span><br />
+            <%= f.text_area :content %>
+          </div>
+
+          <div class="actions actions-mt">
+            <%= f.submit "編集する" %>
+          </div>
+          
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</main>

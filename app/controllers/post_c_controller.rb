@@ -18,6 +18,7 @@ class PostCController < ApplicationController
     @post = PostC.new(post_params)
     @post.user_id = current_user.id
     @post.save
+    redirect_to post_c_path(@post)
   end
 
   def edit
@@ -47,7 +48,7 @@ class PostCController < ApplicationController
   end
 
   def set_post
-    @post = Post_C.find(params[:id])
+    @post = PostC.find(params[:id])
   end
 
 end
