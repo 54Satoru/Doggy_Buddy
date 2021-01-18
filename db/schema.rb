@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_29_224833) do
+ActiveRecord::Schema.define(version: 2021_01_18_073638) do
 
   create_table "post_cs", force: :cascade do |t|
     t.string "title"
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(version: 2020_12_29_224833) do
     t.index ["user_id"], name: "index_post_sitters_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.float "rate"
+    t.text "content"
+    t.string "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "reviewee_id", null: false
+    t.index ["reviewee_id"], name: "index_reviews_on_reviewee_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -58,4 +70,6 @@ ActiveRecord::Schema.define(version: 2020_12_29_224833) do
 
   add_foreign_key "post_cs", "users"
   add_foreign_key "post_sitters", "users"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "users", column: "reviewee_id"
 end

@@ -1,0 +1,48 @@
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="form-col col-md-7 col-lg-5">
+        <h2 class="text-center title-color">新規投稿</h2>
+
+          <%= form_with(model: @review, url: user_reviews_path, local: true) do |f| %>
+
+            <div class="position_sitter_c">
+              <%= f.radio_button :position, :sitter %>
+              <%= f.label :position, "シッターとして投稿する" %><br />
+
+              <%= f.radio_button :position, :c %>
+              <%= f.label :position, "シッター利用者として投稿する" %>
+            </div>
+              
+            <div class="form-group row" id="star">
+              <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
+              <%= f.hidden_field :rate, id: :review_star %>
+            </div>
+            
+            <script>
+              $('#star').raty({
+                size     : 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'review[rate]',
+                half: true,
+              });
+            </script>
+
+            <%= f.hidden_field :reviewee_id, value: @user.id %>
+
+            <div class="field field-mt">
+              <%= f.label :レビュー内容 %><span class="required">必須</span><br />
+              <%= f.text_area :content %>
+            </div>
+
+            <div class="actions actions-mt">
+              <%= f.submit "投稿する" %>
+            </div>
+          <% end %>
+
+      </div>
+    </div>
+  </div>
+</main>

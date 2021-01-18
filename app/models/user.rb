@@ -10,4 +10,5 @@ class User < ApplicationRecord
   
   has_many :post_cs, dependent: :destroy
   has_many :post_sitters, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 end
