@@ -25,11 +25,8 @@
 
               <%# フォロー・フォロワー %>
             <div class="users-follow-wrap">
-              <div class="users-follow">
-                6 follow
-              </div>
-              <div class="users-follower">
-                4 follower
+              <div class="stats">
+                <%= render 'stats' %>
               </div>
             </div>
           </div>
@@ -44,9 +41,7 @@
 
               <%# フォローボタン %>
             <div class="favorite-btn-col">
-              <button>
-                フォローする
-              </button>
+              <%= render 'follow_form' if user_signed_in? %>
             </div>
           </div>
         </div>
