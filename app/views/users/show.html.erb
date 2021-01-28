@@ -20,7 +20,7 @@
 
               <%# レビュー機能 %>
             <div class="users-reviews">
-              ☆☆☆☆☆(5)
+              <%= render 'reviews/average_review', review: @reviews %>
             </div>
 
               <%# フォロー・フォロワー %>
@@ -77,4 +77,19 @@
       </div>
     </div>
   </div>
+
+  <%# お気に入り %>
+  <% if @favorite_cs.present? %>
+    <% @favorite_cs.each do |post| %>
+      <%= post.title %>
+      <%= post.content %>
+    <% end %>
+  <% end %>
+
+  <% if @favorite_sitters.present? %>
+    <% @favorite_sitters.each do |post_sitter| %>
+      <%= post_sitter.title %>
+      <%= post_sitter.content %>
+    <% end %>
+  <% end %>
 </main>

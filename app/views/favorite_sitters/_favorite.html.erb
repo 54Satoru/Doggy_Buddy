@@ -1,0 +1,15 @@
+<div id="fav_<%= @post.id %>">
+  <% if !FavoriteSitter.exists?(user: current_user, post_sitter_id: @post.id) %>
+    <%= link_to post_sitter_favorite_sitters_path(@post), method: :post, remote: true, class: "fav-btn" do %>
+      <div class="fav">
+        <i class="far fa-bookmark"></i>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to post_sitter_favorite_sitters_path(@post), method: :delete, remote: true, class: "fav-btn" do %>
+      <div class="fav">
+        <i class="fas fa-bookmark"></i>
+      </div>
+    <% end %>
+  <% end %>
+</div>

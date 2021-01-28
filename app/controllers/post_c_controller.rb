@@ -1,7 +1,6 @@
 class PostCController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
-
   def index
     @posts = PostC.all
   end
@@ -38,7 +37,9 @@ class PostCController < ApplicationController
   end
 
   def destroy
-
+    @post.destroy
+    flash[:notice] = '投稿を削除しました'
+    redirect_to post_c_path(@post)
   end
 
   private

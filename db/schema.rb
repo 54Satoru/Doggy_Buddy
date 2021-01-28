@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_221132) do
+ActiveRecord::Schema.define(version: 2021_01_27_212617) do
+
+  create_table "favorite_cs", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "post_c_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_c_id"], name: "index_favorite_cs_on_post_c_id"
+    t.index ["user_id", "post_c_id"], name: "index_favorite_cs_on_user_id_and_post_c_id", unique: true
+    t.index ["user_id"], name: "index_favorite_cs_on_user_id"
+  end
+
+  create_table "favorite_sitters", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "post_sitter_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_sitter_id"], name: "index_favorite_sitters_on_post_sitter_id"
+    t.index ["user_id", "post_sitter_id"], name: "index_favorite_sitters_on_user_id_and_post_sitter_id", unique: true
+    t.index ["user_id"], name: "index_favorite_sitters_on_user_id"
+  end
 
   create_table "post_cs", force: :cascade do |t|
     t.string "title"
@@ -78,6 +98,10 @@ ActiveRecord::Schema.define(version: 2021_01_18_221132) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorite_cs", "post_cs"
+  add_foreign_key "favorite_cs", "users"
+  add_foreign_key "favorite_sitters", "post_sitters"
+  add_foreign_key "favorite_sitters", "users"
   add_foreign_key "post_cs", "users"
   add_foreign_key "post_sitters", "users"
   add_foreign_key "reviews", "users"

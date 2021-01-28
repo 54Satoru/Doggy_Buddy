@@ -1,3 +1,7 @@
+<div class="favorite">
+  <%= render "favorite_cs/favorite", post_c: @post %>
+</div>
+
 
 <%= @post.user.username %>
 <%= link_to user_path(@post.user) do %>

@@ -16,6 +16,10 @@ class User < ApplicationRecord
   #レビュー
   has_many :reviews, dependent: :destroy
 
+  #お気に入り
+  has_many :favorite_cs, dependent: :destroy
+  has_many :favorite_sitters, dependent: :destroy
+
   #フォロー
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed

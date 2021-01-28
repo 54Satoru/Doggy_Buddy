@@ -3,6 +3,20 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    
+    #レビュー
+    @reviews = Review.where(reviewee_id: @user.id)
+    if @user.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @user.reviews.average(:rate).to_f.round(1)
+    end
+
+    #お気に入り
+    favorite_cs = FavoriteC.where(user_id: current_user.id).pluck(:post_c_id)
+    @favorite_cs = PostC.find(favorite_cs)
+    favorite_sitters = FavoriteSitter.where(user_id: current_user.id).pluck(:post_sitter_id)
+    @favorite_sitters = PostSitter.find(favorite_sitters)
   end
   
   def edit
