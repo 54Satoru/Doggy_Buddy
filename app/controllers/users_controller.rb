@@ -12,6 +12,25 @@ class UsersController < ApplicationController
       @average_review = @user.reviews.average(:rate).to_f.round(1)
     end
 
+    #メッセージ
+    @currentUserEntry = Entry.where(user_id: current_user.id) #ボタンを押したユーザーを探す
+    @userEntry = Entry.where(user_id: @user.id) #ボタンを押されたユーザーを探す。
+    unless @user.id == current_user.id #現在ログインしているユーザーではない（自分に対してはroomを作成できない）
+      @currentUserEntry.each do |cu|
+        @userEntry.each do |u|
+          if cu.room_id == u.room_id  #ルームがすでに作成されている場合
+            @isRoom = true #false(roomが未作成)の時にroomを作成する条件を記述するため
+            @roomId = cu.room_id
+          end
+        end
+      end
+      
+      unless @isRoom 
+        @room = Room.new
+        @entry = Entry.new
+      end
+    end
+
     #お気に入り
     favorite_cs = FavoriteC.where(user_id: current_user.id).pluck(:post_c_id)
     @favorite_cs = PostC.find(favorite_cs)

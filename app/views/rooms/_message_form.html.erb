@@ -1,0 +1,9 @@
+<div class="fixed-bottom" id="message-form">
+  <%= form_with model: @message, local: false do |f| %>
+    <%= f.text_area :content, placeholder: "メッセージを入力して下さい" , class:"form-control", rows: '1', maxlength: '500' %>
+    <%= f.hidden_field :room_id, value: @room.id %>
+    <div class="text-right">
+      <%= f.button "メッセージを送る", type: "submit", class: 'btn btn-primary btn-block disabled', id: 'message-button' %>
+    </div>
+  <% end %>
+</div>

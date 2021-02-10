@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_212617) do
+ActiveRecord::Schema.define(version: 2021_02_08_230319) do
+
+  create_table "entries", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "room_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_entries_on_room_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
+  end
 
   create_table "favorite_cs", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -30,6 +39,17 @@ ActiveRecord::Schema.define(version: 2021_01_27_212617) do
     t.index ["post_sitter_id"], name: "index_favorite_sitters_on_post_sitter_id"
     t.index ["user_id", "post_sitter_id"], name: "index_favorite_sitters_on_user_id_and_post_sitter_id", unique: true
     t.index ["user_id"], name: "index_favorite_sitters_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "room_id", null: false
+    t.text "content"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "post_cs", force: :cascade do |t|
@@ -82,6 +102,13 @@ ActiveRecord::Schema.define(version: 2021_01_27_212617) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "rooms", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_rooms_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -98,12 +125,17 @@ ActiveRecord::Schema.define(version: 2021_01_27_212617) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "entries", "rooms"
+  add_foreign_key "entries", "users"
   add_foreign_key "favorite_cs", "post_cs"
   add_foreign_key "favorite_cs", "users"
   add_foreign_key "favorite_sitters", "post_sitters"
   add_foreign_key "favorite_sitters", "users"
+  add_foreign_key "messages", "rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "post_cs", "users"
   add_foreign_key "post_sitters", "users"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "users", column: "reviewee_id"
+  add_foreign_key "rooms", "users"
 end

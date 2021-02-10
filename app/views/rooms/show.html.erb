@@ -1,0 +1,14 @@
+<div class="main">
+  <div class="main-wrapper">
+    <div class="room-wrapper" id="message-container">
+      <% @entries.each do |e| %>
+        <% unless e.user.username == current_user.username %>
+          <div class="h3 mt-5"><%= e.user.username %> さんへのメッセージ</div>
+        <% end %>
+      <% end %>
+    <hr class="mt-3 mb-5">
+      <%= render @messages %>
+      <%= render 'message_form' %>
+    </div>
+  </div>
+</div>

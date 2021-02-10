@@ -8,7 +8,7 @@
             <% if @user.image? %>
               <%= image_tag @user.image.url %>
             <% else %>
-              <%= image_tag "/assets/default.png", :size => '160x160' %>
+              <%= image_tag "/assets/default.png", size: '160x160' %>
             <% end %>
           </div>
 
@@ -33,11 +33,7 @@
 
           <div class="contact-favorite-wrap col-md-4">
               <%# トークルームボタン %>
-            <div class="contact-btn-col">
-              <button>
-                コンタクトをとる
-              </button>
-            </div>
+            <%= render 'message_button' %>
 
               <%# フォローボタン %>
             <div class="favorite-btn-col">
