@@ -40,7 +40,7 @@
             <%= link_to "ログイン", new_user_session_path, class: "nav-link text-success" %>
           </li>
           <li class="nav-item">
-            <%= link_to "ゲストログイン", "#", class: "nav-link text-success" %>
+            <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav-link text-success" %>
           </li>
         <% end %>
       </ul>

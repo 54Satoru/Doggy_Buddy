@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   devise_for :users, controllers: { :registrations => "users/registrations" }
   root to: "home#index"
-  
+
+  #ゲストログイン
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
+
   resources :users, only: [:show] do
     resources :reviews, only: [:index, :new, :create]
     member do
