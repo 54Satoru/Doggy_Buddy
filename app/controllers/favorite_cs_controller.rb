@@ -5,6 +5,7 @@ class FavoriteCsController < ApplicationController
   def create
     if @post.user_id != current_user.id
       @favorite_c = FavoriteC.create(user_id: current_user.id, post_c_id: @post.id)
+      @post.create_notification_favorite_c!(current_user)
     end
   end
 

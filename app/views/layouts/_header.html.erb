@@ -21,8 +21,11 @@
               <i class="fas fa-paper-plane"></i>
             <% end %>
           </li>
+          <% if unchecked_notifications.any? %>
+            <i class="fa fa-circle" style="color: gold;"></i>
+          <% end %>
           <li class="nav-item">
-            <%= link_to  "#", class: "nav-link text-success" do %>
+            <%= link_to  notifications_path, class: "nav-link text-success" do %>
               <i class="fas fa-bell"></i>
             <% end %>
           </li>

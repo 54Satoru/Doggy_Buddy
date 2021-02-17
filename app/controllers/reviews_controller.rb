@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     if @review.save
+      @review.create_notification_review!(current_user, @user)
       flash[:notice] = 'レビューを投稿しました'
       redirect_to user_reviews_path
     else

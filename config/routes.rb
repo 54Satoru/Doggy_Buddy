@@ -28,4 +28,7 @@ Rails.application.routes.draw do
   get "show_additionally", to: "rooms#show_additionally"
   
   resources :relationships, only: [:create, :destroy]
+
+  resources :notifications, only: [:index]
+  get '/notifications/destroy_all', to: 'notifications#destroy_all'
 end
