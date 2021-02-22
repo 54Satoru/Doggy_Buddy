@@ -1,6 +1,10 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    
+  end
+
   def create
     @room = Room.create(user_id: current_user.id)#現在ログインしているユーザーのentry
     @entry1 = Entry.create(room_id: @room.id, 

@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     resource :favorite_sitters, only: [:create, :destroy]
   end
 
-  resources :rooms, only: [:create, :show]
+  resources :rooms, only: [:index, :create, :show]
   resources :messages, only: [:create]
   get "show_additionally", to: "rooms#show_additionally"
   

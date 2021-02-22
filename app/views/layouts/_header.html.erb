@@ -11,25 +11,14 @@
       <ul class="navbar-nav">
 
         <% if user_signed_in? %>
-          <li class="nav-item active Header_btns Header_btns_l">
-            <div class="Header_btn Menu_btn">
-              <i class="fas fa-edit"></i>
-            </div>
-            <div class="Menu">
-              <%= link_to new_post_c_path, class: "nav-link text-success" do %>
-                <div class="Menu__Content">
-                  <%= "カスタマー" %>
-                </div>
-              <% end %>
-              <%= link_to new_post_sitter_path, class: "nav-link text-success" do %>
-                <div class="Menu__Content">
-                  <%= "シッター" %>
-                </div>
-              <% end %>
-            </div>
+          <li class="nav-item active">
+            <%= link_to "シッター利用者として投稿する", new_post_c_path, class: "nav-link text-success" %>
           </li>
           <li class="nav-item">
-            <%= link_to  "#", class: "nav-link text-success" do %>
+            <%= link_to "シッターとして投稿する", new_post_sitter_path, class: "nav-link text-success" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to  rooms_path, class: "nav-link text-success" do %>
               <i class="fas fa-paper-plane"></i>
             <% end %>
           </li>
@@ -41,8 +30,15 @@
               <i class="fas fa-bell"></i>
             <% end %>
           </li>
-          <li class="nav-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link text-success" %>
+          <li class="nav-item dropdown">
+            <a href="" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= image_tag current_user.image.url(resize: "38x38^", gravity: "center", crop: "38x38+0+0"), style: "border-radius: 4em;", size: "38x38" %>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "プロフィール", user_path(current_user), class: "text-success dropdown-item" %>
+              <%= link_to "アカウントの編集", edit_user_registration_path, class:"text-success dropdown-item" %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-success dropdown-item" %>
+            </div>
           </li>
         <% else %>
           <li class="nav-item">
