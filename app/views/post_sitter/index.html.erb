@@ -1,5 +1,7 @@
 <% @posts.each do |post| %>
-  <%= image_tag post.user.image.url %>
+  <%= link_to user_path(post.user) do %>
+    <%= image_tag post.user.image.url %>
+  <% end %>
   <%= post.user.username %>
   <%= post.title %>
   <%= post.region %>

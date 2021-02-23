@@ -1,20 +1,28 @@
-<div class="favorite">
-  <%= render "favorite_sitters/favorite", post_sitter: @post %>
-</div>
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+    <div class="row justify-content-center">
 
-<%= @post.user.username %>
-<%= link_to user_path(@post.user) do %>
-  <%= image_tag @post.user.image.url %>
-<% end %>
+        <div class="favorite">
+          <%= render "favorite_sitters/favorite", post_sitter: @post %>
+        </div>
 
-<%= @post.title %>
-<%= image_tag @post.image.url %>
-<%= @post.region %>
-<%= @post.datetime %>
-<%= @post.price %>
-<%= @post.payment %>
-<%= simple_format @post.content %>
+        <%= @post.user.username %>
+        <%= link_to user_path(@post.user) do %>
+          <%= image_tag @post.user.image.url %>
+        <% end %>
 
-<% if @post.user.id == current_user.id %>
-  <%= link_to "編集", edit_post_sitter_path(@post), class: "button" %>
-<% end %>
+        <%= @post.title %>
+        <%= image_tag @post.image.url %>
+        <%= @post.region %>
+        <%= @post.datetime %>
+        <%= @post.price %>
+        <%= @post.payment %>
+        <%= simple_format @post.content %>
+
+        <% if @post.user.id == current_user.id %>
+          <%= link_to "編集", edit_post_sitter_path(@post), class: "button" %>
+        <% end %>
+
+    </div>
+  </div>
+</main>
