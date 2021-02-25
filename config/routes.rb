@@ -24,9 +24,13 @@ Rails.application.routes.draw do
     resource :favorite_cs, only: [:create, :destroy]
   end
 
+  delete 'post_c/:id', to: 'post_c#destroy'
+
   resources :post_sitter do
     resource :favorite_sitters, only: [:create, :destroy]
   end
+
+  delete 'post_sitter/:id', to: 'post_sitter#destroy'
 
   resources :rooms, only: [:index, :create, :show]
   resources :messages, only: [:create]
