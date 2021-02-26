@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .post-inner {
-    background-color: #efefef;
-    padding: 20px 40px;
-    border-radius: 10px;
+  background-color: #efefef;
+  padding: 20px 40px;
+  border-radius: 10px;
 }
 
 .post-image {
@@ -22,6 +22,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.post-favorite a {
+  font-size: 30px;
+  color: #00bf8f;
+  margin-top: -16px;
+}
+
+.post-favorite a:hover {
+  color: #00bf8f;
 }
 
 .post-comment {

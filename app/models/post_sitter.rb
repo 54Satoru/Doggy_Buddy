@@ -10,13 +10,13 @@ class PostSitter < ApplicationRecord
 
   
   def create_notification_favorite_sitter!(current_user)
-    temp = Notification.where(["visitor_id = ? and visited_id = ? and post_sitter_id = ? and action = ? ", current_user.id, user_id, id, 'favorite'])
+    temp = Notification.where(["visitor_id = ? and visited_id = ? and post_sitter_id = ? and action = ? ", current_user.id, user_id, id, 'favorite_sitter'])
 
     if temp.blank?
       notification = current_user.active_notifications.new(
         post_sitter_id: id,
         visited_id: user_id,
-        action: 'favorite'
+        action: 'favorite_sitter'
       )
 
       if notification.visitor_id == notification.visited_id

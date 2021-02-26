@@ -21,7 +21,7 @@
             <%= link_to  rooms_path, class: "nav-link text-success" do %>
               <i class="fas fa-paper-plane"></i>
             <% end %>
-          </li>
+        </li>
           <li class="nav-item">
             <% if unchecked_notifications.any? %>
               <i class="fa fa-circle"></i>
@@ -32,7 +32,11 @@
           </li>
           <li class="nav-item dropdown">
             <a href="" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag current_user.image.url(resize: "35x35^", gravity: "center", crop: "35x35+0+0"), style: "border-radius: 4em; border: solid 2px #00bf8f;", size: "35x35" %>
+              <% if current_user.image? %>
+                <%= image_tag current_user.image.url(resize: "35x35^", gravity: "center", crop: "35x35+0+0"), style: "border-radius: 4em; border: solid 2px #00bf8f;", size: "35x35" %>
+              <% else %>
+                <%= image_tag "/assets/default.png", style: "border-radius: 4em; border: solid 2px #00bf8f;", size: '35x35' %>
+              <% end %>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "プロフィール", user_path(current_user), class: "text-success dropdown-item" %>

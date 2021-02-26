@@ -10,7 +10,9 @@ module NotificationsHelper
       when 'follow' then
         tag.a(@visitor.username, href: user_path(@visitor), style: "font-weight: bold;")+"があなたをフォローしました"
       when 'favorite' then
-        tag.a(@visitor.username, href: user_path(@visitor), style: "font-weight: bold;")+"が"+tag.a('あなたの投稿', href: post_c_path(notification.post_c), style: "font-weight: bold;")+"にいいねしました"
+        tag.a(@visitor.username, href: user_path(@visitor), style: "font-weight: bold;")+"が"+tag.a('あなたの投稿', href: post_c_path(notification.post_c_id), style: "font-weight: bold;")+"にいいねしました"
+      when 'favorite_sitter' then
+        tag.a(@visitor.username, href: user_path(@visitor), style: "font-weight: bold;")+"が"+tag.a('あなたの投稿', href: post_sitter_path(notification.post_sitter_id), style: "font-weight: bold;")+"にいいねしました"
       when 'message' then
         @message = Message.find_by(id: @visitor_message)&.content
         tag.a(@visitor.username, href: user_path(@visitor), style: "font-weight: bold;")+"が"+tag.a('あなたの投稿', href: room_path(notification.room_id), style: "font-weight: bold;")+"にコメントしました"
