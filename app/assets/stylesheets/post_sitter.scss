@@ -2,19 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.post-inner {
+.post-index-wrap a {
+  width: 100%;
+  color: #727272;
+}
+
+.post-index-wrap a:hover {
+  opacity: 0.8;
+}
+
+.media {
+  border: solid 2px;
+  padding: 24px 34px;
+  margin-bottom: 26px;
+}
+
+.media-body {
+  margin-left: 16px;
+}
+
+.post-index-username {
+  font-size: 20px;
+}
+
+
+
+.post-show-inner {
   background-color: #efefef;
   padding: 20px 40px;
   border-radius: 10px;
 }
 
-.post-image {
+.post-show-image {
   position: relative;
   overflow: hidden;
   padding-top: 60%;
 }
 
-.post-image img {
+.post-show-image img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -24,17 +49,17 @@
   object-fit: cover;
 }
 
-.post-favorite a {
+.post-show-favorite a {
   font-size: 30px;
   color: #00bf8f;
   margin-top: -16px;
 }
 
-.post-favorite a:hover {
+.post-show-favorite a:hover {
   color: #00bf8f;
 }
 
-.post-comment {
+.post-show-comment {
   background-color: white;
   width: 100%;
   min-height: 100px;
@@ -43,6 +68,6 @@
   font-size: 20px;
 }
 
-.post-comment p {
+.post-show-comment p {
   padding: 0px 10px;
 }

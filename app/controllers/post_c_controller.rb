@@ -3,11 +3,21 @@ class PostCController < ApplicationController
 
   def index
     @posts = PostC.all
+
+    #レビュー
+    @user = User.find_by(params[:id])
+    @reviews = Review.where(reviewee_id: @user.id)
+    if @user.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @user.reviews.average(:rate).to_f.round(1)
+    end
   end
 
   def show
     @post = PostC.find(params[:id])
 
+    #レビュー
     @user = User.find_by(params[:id])
     @reviews = Review.where(reviewee_id: @user.id)
     if @user.reviews.blank?
@@ -55,10 +65,6 @@ class PostCController < ApplicationController
 
   def post_params
     params.require(:post_c).permit(:title, :region, :datetime, :price, :payment, :content, :image, :remove_image)
-  end
-
-  def set_post
-    @post = PostC.find(params[:id])
   end
 
 end

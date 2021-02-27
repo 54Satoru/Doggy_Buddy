@@ -2,7 +2,6 @@
   <div class="container">
     <div class="row justify-content-center">
 
-        
 
       <div class="col-md-4 text-center post-profile-wrap">
         <div class="icon mb-2">
@@ -37,39 +36,39 @@
 
 
       <div class="col-md-8 post-text-wrap">
-        <div class="post-inner">
+        <div class="post-show-inner">
           <div>
-            <h2 class="post-title font-weight-bold text-dark text-center mb-3"><%= @post.title %></h2>
+            <h2 class="post-show-title font-weight-bold text-dark text-center mb-3"><%= @post.title %></h2>
           </div>
-          <div class="post-image text-center mb-5">
+          <div class="post-show-image text-center mb-5">
             <% if @post.image? %>
               <%= image_tag @post.image.url, class: "img-fluid" %>
             <% else %>
               <%= image_tag '/assets/noimage.dog1.png' %>
             <% end %>
           </div>
-          <div class="favorite post-favorite">
+          <div class="favorite post-show-favorite">
             <% if @post.user.id != current_user.id %>
               <%= render "favorite_sitters/favorite", post_sitter: @post %>
             <% end %>
           </div>
           <div>
-            <h5 class="post-title-text font-weight-bold text-dark mb-2">お住いの地域</h5>
-            <p class="post-text mb-4"><%= @post.region %></p>
+            <h5 class="post-show-title-text font-weight-bold text-dark mb-2">お住いの地域</h5>
+            <p class="post-show-text mb-4"><%= @post.region %></p>
           </div>
           <div>
-            <h5 class="post-title-text font-weight-bold text-dark mb-2">希望日時</h5>
-            <p class="post-text mb-4"><%= @post.datetime %></p>
+            <h5 class="post-show-title-text font-weight-bold text-dark mb-2">希望日時</h5>
+            <p class="post-show-text mb-4"><%= @post.datetime %></p>
           </div>
           <div>
-            <h5 class="post-title-text font-weight-bold text-dark mb-2">希望料金</h5>
-            <p class="post-text mb-4"><%= @post.price %></p>
+            <h5 class="post-show-title-text font-weight-bold text-dark mb-2">希望料金</h5>
+            <p class="post-show-text mb-4"><%= @post.price %></p>
           </div>
           <div>
-            <h5 class="post-title-text font-weight-bold text-dark mb-2">お支払い方法</h5>
-            <p class="post-text mb-4"><%= @post.payment %></p>
+            <h5 class="post-show-title-text font-weight-bold text-dark mb-2">お支払い方法</h5>
+            <p class="post-show-text mb-4"><%= @post.payment %></p>
           </div>
-          <div class="post-comment">
+          <div class="post-show-comment">
             <p><%= simple_format @post.content %></p>
           </div>
         </div>
