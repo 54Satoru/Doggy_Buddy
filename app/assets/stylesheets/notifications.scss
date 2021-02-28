@@ -1,3 +1,24 @@
 // Place all the styles related to the notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.notification .justify-content-center {
+  padding: 0 200px;
+}
+
+.notification a {
+  color: #00bf8f;
+}
+
+@media (max-width: 992px) {
+    .notification .justify-content-center {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .notification .justify-content-center {
+    padding: 0 5px;
+  }
+}

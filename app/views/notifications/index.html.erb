@@ -1,14 +1,24 @@
-<h3 class="text-center">通知</h3>
-  <%= link_to notifications_destroy_all_path do %>
-    <i class="fas fa-trash" style="color: black;"></i>
-    <h7 style="color: black;">全削除</h7>
-  <% end %>
-  <hr>
-<% if @notifications.exists? %>
-  <div class="users-index">
-    <%= render @notifications %>
-    <%= paginate @notifications %>
+<main role="main" class="flex-shrink-0">
+  <div class="container notification">
+    <div class="justify-content-center">
+      <h2 class="text-center title-color mb-5">通知</h2>
+
+      <%= link_to notifications_destroy_all_path do %>
+        <div>
+          <i class="fas fa-trash" style="color: black;"></i>
+          <h7 style="color: black;">全削除</h7>
+        </div>
+      <% end %>
+      <hr>
+      <% if @notifications.exists? %>
+        <div class="users-index">
+          <%= render @notifications %>
+          <%= paginate @notifications %>
+        </div>
+      <% else %>
+        <p>通知はありません</p>
+      <% end %>
+      
+    </div>
   </div>
-<% else %>
-  <p>通知はありません</p>
-<% end %>
+</main>
