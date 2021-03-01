@@ -1,3 +1,19 @@
 // Place all the styles related to the Rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.message img {
+  inline-size: fit-content;
+  max-width: 100%;
+  height: auto;
+}
+
+input#message_image {
+  display: none;
+}
+
+button#message-button {
+  border-radius: 0 0.25rem 0.25rem 0;
+  background-color: #00bf8f;
+  border-color: #00bf8f;
+}

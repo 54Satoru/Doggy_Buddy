@@ -1,9 +1,21 @@
 <div class="fixed-bottom" id="message-form">
   <%= form_with model: @message, local: false do |f| %>
+  <div class="input-group">
     <%= f.text_area :content, placeholder: "メッセージを入力して下さい" , class:"form-control", rows: '1', maxlength: '500' %>
+
+    <div class="input-group-append">
+      <%= f.label :image, class: "input-group-text" do %>
+        <i class="far fa-images"></i>
+        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+      <% end %>
+    </div>
+
     <%= f.hidden_field :room_id, value: @room.id %>
     <div class="text-right">
-      <%= f.button "メッセージを送る", type: "submit", class: 'btn btn-primary btn-block disabled', id: 'message-button' %>
+      <%= f.button  type: "submit", class: 'btn btn-primary btn-block disabled', id: 'message-button' do %>
+        <i class="fas fa-paper-plane"></i>
+      <% end %>
     </div>
+  </div>
   <% end %>
 </div>

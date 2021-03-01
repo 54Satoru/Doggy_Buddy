@@ -82,6 +82,12 @@ a:hover{
   border-color: #00bf8f;
 }
 
+.btn-success:hover {
+  color: #fff;
+  background-color: #01916d;
+  border-color: #01916d;
+}
+
 /* フォーム */
 .field-mt, .actions-mt, .button_to, .post-bt {
   margin-top: 24px;
