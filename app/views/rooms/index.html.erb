@@ -1,0 +1,36 @@
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h2 class="text-center title-color mb-5">メッセージ一覧</h2>
+    </div>
+
+  
+    <% @anotherEntries.each do |e| %>
+      <div class="room-index-wrap">
+        <div class="row justify-content-start list-inline list-unstyled">
+          <%= link_to room_path(e.room.id) do %>
+            <div class="icon list-inline-item">
+              <% if @user.image? %>
+                <%= image_tag e.user.image.url, size: 80 %>
+              <% else %>
+                <%= image_tag "/assets/default.png", size: 80 %>
+              <% end %>
+            </div>
+            <div class="list-inline-item room-index-item">
+            <ul>
+              <li class="room-index-name font-weight-bold">
+                <%= e.user.username %>
+              </li>
+              <li class="room-index-message">
+                <%= e.room.messages.order(created_at: :desc).take.try(:content) %>
+              </li>
+            </ul>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    </div>
+  </div>
+</main>

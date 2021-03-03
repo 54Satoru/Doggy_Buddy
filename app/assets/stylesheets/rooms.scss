@@ -2,6 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.room-index-wrap {
+  margin: 0 210px 26px;
+  border: solid 2px;
+  border-radius: 50px;
+  padding: 6px 34px;
+}
+
+.room-index-wrap a {
+  color: #727272;
+}
+
+.room-index-wrap a:hover {
+  opacity: 0.8;
+  color: #727272;
+}
+
+.room-index-wrap li {
+  list-style: none;
+}
+
+div.room-index-item {
+  margin: 4px 0;
+}
+
+
 .message img {
   inline-size: fit-content;
   max-width: 100%;
@@ -16,4 +41,28 @@ button#message-button {
   border-radius: 0 0.25rem 0.25rem 0;
   background-color: #00bf8f;
   border-color: #00bf8f;
+}
+
+
+@media (max-width: 1200px) {
+  .room-index-wrap {
+    margin: 0 110px 26px;
+  }
+}
+
+@media (max-width: 992px) {
+  .room-index-wrap {
+    margin: 0 0 26px;
+  }
+
+  .room-index-wrap ul {
+    padding-left: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .room-index-wrap {
+    margin-bottom: 26px;
+  }
+
 }

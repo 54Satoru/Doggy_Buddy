@@ -6,9 +6,9 @@
           <div class="users-profile-main-image text-center col-md-4 icon">
           <%# 投稿者画像 %>
             <% if @user.image? %>
-              <%= image_tag @user.image.url %>
+              <%= image_tag @user.image.url, size: 160 %>
             <% else %>
-              <%= image_tag "/assets/default.png", size: '160x160' %>
+              <%= image_tag "/assets/default.png", size: 160 %>
             <% end %>
           </div>
 
@@ -38,6 +38,12 @@
               <%# フォローボタン %>
             <div class="favorite-btn-col">
               <%= render 'follow_form' if user_signed_in? %>
+            </div>
+
+            <div class="">
+              <% if @user == current_user %>
+                <%= link_to 'メッセージ', rooms_path %>
+              <% end %>
             </div>
           </div>
         </div>

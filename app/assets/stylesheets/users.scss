@@ -2,15 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
-
 .icon img {
   background-size: cover;
   object-fit: cover;
   border-radius: 50%;
   border: solid 4px #00bf8f !important;
-  width: 160px;
-  height: 160px;
 }
 
 .users-summary-col, .contact-favorite-wrap {

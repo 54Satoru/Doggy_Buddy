@@ -3,7 +3,14 @@ class RoomsController < ApplicationController
   layout 'no_footer'
 
   def index
-    
+    @room = Room.all
+    @user = current_user
+    @currentEntries = current_user.entries
+    myRoomIds = []
+    @currentEntries.each do |entry|
+      myRoomIds << entry.room.id
+    end
+    @anotherEntries = Entry.where(room_id: myRoomIds).where('user_id != ?', @user.id)
   end
 
   def create
@@ -22,7 +29,7 @@ class RoomsController < ApplicationController
       @message = Message.new #messageのインスタンスを作成するため
       @entries = @room.entries #ユーザーの名前などの情報を表示するため
     else
-      # redirect_back(fallback_location: root_path) #前のページに戻す
+      redirect_back(fallback_location: root_path) #前のページに戻す
     end
   end
 
