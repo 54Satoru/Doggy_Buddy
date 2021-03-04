@@ -1,12 +1,16 @@
-<% provide(:title, @title) %>
-<div>
-  <div class="col-md-8">
-    <h3><%= @title %></h3>
-    <% if @users.any? %>
-      <ul class="users follow">
-        <%= render @users %>
-      </ul>
-      <%= paginate @users %>
-    <% end %>
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+
+      <% provide(:title, @title) %>
+      <div class="justify-content-center">
+          <h2 class="text-center title-color mb-5"><%= @title %></h2>
+          <% if @users.any? %>
+            <%= render @users %>
+            
+            <%= paginate @users %>
+          <% end %>
+      </div>
+
+    </div>
   </div>
-</div>
+</main>

@@ -6,11 +6,12 @@
   margin: 0 210px 26px;
   border: solid 2px;
   border-radius: 50px;
-  padding: 6px 34px;
 }
 
 .room-index-wrap a {
+  display: block;
   color: #727272;
+  padding: 6px 34px;
 }
 
 .room-index-wrap a:hover {
@@ -64,5 +65,4 @@ button#message-button {
   .room-index-wrap {
     margin-bottom: 26px;
   }
-
 }

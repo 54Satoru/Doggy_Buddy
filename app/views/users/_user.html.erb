@@ -1,4 +1,23 @@
-<li>
-  <%= image_tag user.image.url, size: 100 %>
-  <%= link_to user.username, user %>
-</li>
+<div class="follow-wrap">
+  <%= link_to user do %>
+    <div class="row justify-content-start list-inline list-unstyled">
+      <div class="icon list-inline-item">
+        <% if user.image? %>
+          <%= image_tag user.image.url, size: 80 %>
+        <% else %>
+          <%= image_tag "/assets/default.png", size: 80 %>
+        <% end %>
+      </div>
+      <div class="list-inline-item follow-item">
+        <ul>
+          <li class="follow-name font-weight-bold">
+            <%= user.username %>
+          </li>
+          <li class="follow-profile">
+            <%= user.profile %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>

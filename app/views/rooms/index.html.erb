@@ -7,8 +7,8 @@
   
     <% @anotherEntries.each do |e| %>
       <div class="room-index-wrap">
-        <div class="row justify-content-start list-inline list-unstyled">
-          <%= link_to room_path(e.room.id) do %>
+        <%= link_to room_path(e.room.id) do %>
+          <div class="row justify-content-start list-inline list-unstyled">
             <div class="icon list-inline-item">
               <% if @user.image? %>
                 <%= image_tag e.user.image.url, size: 80 %>
@@ -17,17 +17,17 @@
               <% end %>
             </div>
             <div class="list-inline-item room-index-item">
-            <ul>
-              <li class="room-index-name font-weight-bold">
-                <%= e.user.username %>
-              </li>
-              <li class="room-index-message">
-                <%= e.room.messages.order(created_at: :desc).take.try(:content) %>
-              </li>
-            </ul>
+              <ul>
+                <li class="room-index-name font-weight-bold">
+                  <%= e.user.username %>
+                </li>
+                <li class="room-index-message">
+                  <%= e.room.messages.order(created_at: :desc).take.try(:content) %>
+                </li>
+              </ul>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     <% end %>
 

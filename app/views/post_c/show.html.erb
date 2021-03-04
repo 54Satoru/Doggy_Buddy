@@ -7,10 +7,10 @@
         <div class="icon mb-2">
           <% if @user.image? %>
             <%= link_to user_path(@post.user) do %>
-              <%= image_tag @post.user.image.url %>
+              <%= image_tag @post.user.image.url, size: 160 %>
             <% end %>
           <% else %>
-            <%= image_tag "/assets/default.png", size: '160x160' %>
+            <%= image_tag "/assets/default.png", size: 160 %>
           <% end %>
         </div>
         <div class="user-name mb-2">
@@ -33,7 +33,6 @@
           </div>
         <% end %>
       </div>
-
 
       <div class="col-md-8 post-text-wrap">
         <div class="post-show-inner">
@@ -73,9 +72,6 @@
           </div>
         </div>
       </div>
-
-
-
 
     </div>
   </div>

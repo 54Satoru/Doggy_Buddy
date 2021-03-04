@@ -2,7 +2,7 @@
   <% unless @user == current_user %>
     <% if @isRoom == true %> <!--すでにroomがあったら「メッセージへ」と表示してメッセージに飛ばす-->
       <div class="message-button">
-        <%= link_to "メッセージ", room_path(@roomId), class: "btn-primary btn btn-lg" %>
+        <%= link_to "メッセージ", room_path(@roomId), class: "users-bt" %>
       </div>
     <% else %>
       <%= form_with model: @room, local: true do |f| %>
@@ -10,7 +10,7 @@
           <%= e.hidden_field :user_id, value: @user.id %> <!-- entryテーブルにuser_idを送る -->
         <% end %>
         <div class="message-button">
-          <%= f.submit "メッセージ", class: "btn-primary btn btn-md", alt: "メッセージを送る" %>
+          <%= f.submit "メッセージ", class: "users-bt", alt: "メッセージを送る" %>
         </div>
       <% end %>
     <% end %>

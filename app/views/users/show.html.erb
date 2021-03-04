@@ -42,7 +42,7 @@
 
             <div class="">
               <% if @user == current_user %>
-                <%= link_to 'メッセージ', rooms_path %>
+                <%= link_to 'メッセージ', rooms_path, class: "users-bt" %>
               <% end %>
             </div>
           </div>

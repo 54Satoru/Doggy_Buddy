@@ -153,6 +153,27 @@ a:hover{
   padding: 2px;
 }
 
+a.users-bt {
+  width: 70%;
+  color: white;
+  background-color: #00bf8f;
+  border: solid 2px #00bf8f;
+  border-radius: 3px;
+  padding: 2px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+input.users-bt {
+  width: 70%;
+  color: white;
+  background-color: #00bf8f;
+  border: solid 2px #00bf8f;
+  border-radius: 3px;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+
 .form-col a {
   display: inline-block;
   margin-top: 8px;
