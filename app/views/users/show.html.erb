@@ -48,17 +48,10 @@
           </div>
         </div>
 
-      <div class="container profile-container">
-          <%# プロフィール %>
-        <div class="users-profile">
-          <%= simple_format @user.profile %>
-        </div>
       </div>
-      </div>
-    </div>
-  </div>
+    
 
-  <div class="users-profile-item-wrap">
+  <!--<div class="users-profile-item-wrap">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
@@ -78,20 +71,157 @@
         <div class="col-md-8"></div>
       </div>
     </div>
+  </div>-->
+
+
+        <!--タブ-->
+      <div class="tab-panel">
+        <ul class="tab-group">
+          <li class="tab tab-A is-active">プロフィール</li>
+          <li class="tab tab-B">お気に入り</li>
+          <li class="tab tab-C">レビュー</li>  
+        </ul>
+        
+
+        <!--タブを切り替えて表示するコンテンツ-->
+        <div class="panel-group">
+
+            <!-- プロフィール -->
+          <div class="panel tab-A is-show">
+            <div class="panel-title mb-5">
+              <h4>プロフィール</h4>
+            </div>
+
+            <div class="users-profile">
+              <%= simple_format @user.profile %>
+            </div>
+          </div>
+
+
+            <!-- お気に入り -->
+          <div class="panel tab-B">
+            <div class="panel-title mb-3">
+              <h4>お気に入り</h4>
+            </div>
+
+            <% if @favorite_cs.present? %>
+              <div class="panel-small-title mb-5">
+                <h5>シッター利用者</h5>
+              </div>
+              <% @favorite_cs.each do |post| %>
+                <div class="panel-favorite-wrap">
+                  <div class="row panel-favorite-item list-inline mb-3">
+                    <div class="panel-favorite-image icon list-inline-item">
+                      <% if post.user.image? %>
+                        <%= image_tag post.user.image.url, size: 60 %>
+                      <% else %>
+                        <%= image_tag "/assets/default.png", size: 60 %>
+                      <% end %>
+                    </div>
+                    <div class="panel-favorite-box list-inline-item">
+                      <ul>
+                        <li class="panel-favorite-name">
+                          <%= post.user.username %>
+                        </li>
+                        <li class="panel-favorite-title">
+                          <%= post.title %>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="panel-favorite-content">
+                    <%= post.content %>
+                  </div>
+                  <hr>
+                </div>
+              <% end %>
+            <% end %>
+
+
+            <% if @favorite_sitters.present? %>
+              <div class="panel-small-title mb-5">
+                <h5>シッター</h5>
+              </div>
+              <% @favorite_sitters.each do |post_sitter| %>
+                <div class="panel-favorite-wrap">
+                  <div class="row panel-favorite-item list-inline mb-3">
+                    <div class="panel-favorite-image icon list-inline-item">
+                      <% if post_sitter.user.image? %>
+                        <%= image_tag post_sitter.user.image.url, size: 60 %>
+                      <% else %>
+                        <%= image_tag "/assets/default.png", size: 60 %>
+                      <% end %>
+                    </div>
+                    <div class="panel-favorite-box list-inline-item">
+                      <ul>
+                        <li class="panel-favorite-name">
+                          <%= post_sitter.user.username %>
+                        </li>
+                        <li class="panel-favorite-title">
+                          <%= post_sitter.title %>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="panel-favorite-content">
+                    <%= post_sitter.content %>
+                  </div>
+                  <hr>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+
+
+            <!-- レビュー -->
+          <div class="panel tab-C">
+            <div class="panel-title mb-5">
+              <%= link_to  do %>
+                <h4>レビュー</h4>
+              <% end %>
+            </div>
+            <% if @reviews.present? %>
+              <% @reviews.each do |review| %>
+                <div class="panel-review-wrap">
+                  <div class="row panel-review-item list-inline mb-3">
+                    <div class="panel-review-image icon list-inline-item">
+                      <% if review.user.image? %>
+                        <%= image_tag review.user.image.url, size: 60 %>
+                      <% else %>
+                        <%= image_tag "/assets/default.png", size: 60 %>
+                      <% end %>
+                    </div>
+                    <div class="panel-review-box list-inline-item">
+                      <ul>
+                        <li class="panel-review-name">
+                          <%= review.user.username %>
+                        </li>
+                        <li class="panel-review-position">
+                          <% if review.position == 'sitter' %>
+                            <%= 'シッター' %>
+                          <% else %>
+                            <%= 'シッター利用者' %>
+                          <% end %>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="panel-review-star mb-2">
+                    <%= render 'reviews/star', review: review %>
+                  </div>
+                  <div class="panel-review-content">
+                    <%= review.content %>
+                  </div>
+                  <hr>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
   </div>
-
-  <%# お気に入り %>
-  <% if @favorite_cs.present? %>
-    <% @favorite_cs.each do |post| %>
-      <%= post.title %>
-      <%= post.content %>
-    <% end %>
-  <% end %>
-
-  <% if @favorite_sitters.present? %>
-    <% @favorite_sitters.each do |post_sitter| %>
-      <%= post_sitter.title %>
-      <%= post_sitter.content %>
-    <% end %>
-  <% end %>
+  
 </main>
