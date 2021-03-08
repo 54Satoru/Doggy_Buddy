@@ -4,15 +4,15 @@
 
 
       <div class="col-md-4 text-center post-profile-wrap">
-        <div class="icon mb-2">
-          <% if @user.image? %>
-            <%= link_to user_path(@post.user) do %>
+        <%= link_to user_path(@post.user) do %>
+          <div class="icon mb-2">
+            <% if @user.image? %>
               <%= image_tag @post.user.image.url, size: 160 %>
+            <% else %>
+              <%= image_tag "/assets/default.png", size: 160 %>
             <% end %>
-          <% else %>
-            <%= image_tag "/assets/default.png", size: 160 %>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
         <div class="user-name mb-2">
           <h3 class="font-weight-bold"><%= @post.user.username %></h3>
         </div>

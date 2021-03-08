@@ -1,11 +1,38 @@
-<% @reviews.each do |review| %>
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+    <div class="justify-content-center">
+      <h2 class="text-center title-color mb-5">レビュー 一覧</h2>
 
-  <%= review.user.username %>
-  <%= image_tag review.user.image.url %>
-  <%= review.position %>
-  <%= render "reviews/star", review: review  %>
-  <%= review.content %>
+      <div class="review-index-wrap">
+        <% @reviews.each do |review| %>
+          <div class="media review-index-inner">
+            <div class="icon2">
+              <%= link_to user_path(review.user) do %>
+                <% if review.user.image? %>
+                  <%= image_tag review.user.image.url, size: 100, class: "media-object"  %>
+                <% else %>
+                  <%= image_tag "/assets/default.png", size: 100 %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="media-body">
+              <p class="font-weight-bold"><%= review.user.username %></p>
+              <p>
+                <% if review.position == 'sitter' %>
+                  <%= 'シッター' %>
+                <% else %>
+                  <%= 'シッター利用者' %>
+                <% end %>
+              </p>
+              <p><%= render "reviews/star", review: review %></p>
+              <p><%= review.content %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
 
-<% end %>
+    </div>
+  </div>
+</main>
 
 

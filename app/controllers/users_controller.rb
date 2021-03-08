@@ -32,10 +32,10 @@ class UsersController < ApplicationController
     end
 
     #お気に入り
-    favorite_cs = FavoriteC.where(user_id: current_user.id).pluck(:post_c_id)
-    @favorite_cs = PostC.find(favorite_cs)
-    favorite_sitters = FavoriteSitter.where(user_id: current_user.id).pluck(:post_sitter_id)
-    @favorite_sitters = PostSitter.find(favorite_sitters)
+    favorite_cs = @user.favorite_cs.pluck(:post_c_id)
+    @favorite_cs = PostC.where(id: favorite_cs)
+    favorite_sitters = @user.favorite_sitters.pluck(:post_sitter_id)
+    @favorite_sitters = PostSitter.where(id: favorite_sitters)
   end
   
   def edit

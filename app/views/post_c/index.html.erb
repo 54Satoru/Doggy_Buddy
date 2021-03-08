@@ -1,31 +1,35 @@
 <main role="main" class="flex-shrink-0">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="">
-        <h2 class="text-center title-color mb-5">シッター利用者一覧</h2>
+      <h2 class="text-center title-color mb-5">シッター利用者一覧</h2>
 
-        <div class="post-index-wrap">
-          <% @posts.each do |post| %>
-            <%= link_to post_c_path(post.id) do %>
-              <div class="media">              
-                <%= image_tag post.user.image.url,style: "border-radius: 50%; border: solid 3px #727272;", size: "160x160", class: "media-object" %>
-                <div class="media-body">
-                  <h4 class="media-heading"><%= post.title %></h4>
-                  <p class="post-index-username"><%= post.user.username %></p>
-                  <p><%= simple_format post.content %></p>
-                  <ul class="list-inline list-unstyled">
-                    <li class="list-inline-item"><span><p class="mb-1">地域</p> <%= post.region %> </span></li>
-                    <li class="list-inline-item">|</li>
-                    <li class="list-inline-item"><span><p class="mb-1">日時</p> <%= post.datetime %> </span></li>
-                    <li class="list-inline-item">|</li>
-                    <li class="list-inline-item"><span><p class="mb-1">料金</p> <%= post.price %> </span></li>
-                  </ul>
-                </div>
+      <div class="post-index-wrap">
+        <% @posts.each do |post| %>
+          <%= link_to post_c_path(post.id) do %>
+            <div class="media">
+              <div class="icon2">
+                <% if post.user.image? %>           
+                  <%= image_tag post.user.image.url, size: 100, class: "media-object" %>
+                <% else %>
+                  <%= image_tag "/assets/default.png", size: 100 %>
+                <% end %>
               </div>
+              <div class="media-body">
+                <h4 class="media-heading"><%= post.title %></h4>
+                <p class="post-index-username"><%= post.user.username %></p>
+                <p><%= simple_format post.content %></p>
+                <ul class="list-inline list-unstyled">
+                  <li class="list-inline-item"><span><p class="mb-1">地域</p> <%= post.region %> </span></li>
+                  <li class="list-inline-item">|</li>
+                  <li class="list-inline-item"><span><p class="mb-1">日時</p> <%= post.datetime %> </span></li>
+                  <li class="list-inline-item">|</li>
+                  <li class="list-inline-item"><span><p class="mb-1">料金</p> <%= post.price %> </span></li>
+                </ul>
+              </div>
+            </div>
 
-            <% end %>
           <% end %>
-        </div>
+        <% end %>
       </div>
 
     </div>
