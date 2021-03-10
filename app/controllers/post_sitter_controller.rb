@@ -7,14 +7,7 @@ class PostSitterController < ApplicationController
 
   def show
     @post = PostSitter.find(params[:id])
-
     @user = User.find_by(params[:id])
-    @reviews = Review.where(reviewee_id: @user.id)
-    if @user.reviews.blank?
-      @average_review = 0
-    else
-      @average_review = @user.reviews.average(:rate).to_f.round(1)
-    end
   end
 
   def new

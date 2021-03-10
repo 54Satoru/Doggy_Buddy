@@ -16,9 +16,6 @@
         <div class="user-name mb-2">
           <h3 class="font-weight-bold"><%= @post.user.username %></h3>
         </div>
-        <div class="users-reviews">
-          <%= render 'reviews/average_review', review: @reviews %>
-        </div>
         <% if @post.user.id == current_user.id %>
           <div class="post-bt">
             <%= link_to "編集", edit_post_c_path(@post) %>
@@ -26,10 +23,10 @@
           <%= button_to "投稿を削除", post_c_path(@post.id), class: "post-edit-delete", data: { confirm: "本当に削除しますか？" }, method: :delete %>
         <% else %>
           <div class="post-bt">
-            <%=  %>
+            <%= link_to "レビュー", new_user_review_path(@post.user.id) %>
           </div>
           <div class="post-bt">
-            <%=  %>
+            <%= link_to "レビューを見る", user_reviews_path(@post.user.id) %>
           </div>
         <% end %>
       </div>
