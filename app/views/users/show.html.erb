@@ -19,8 +19,10 @@
             </div>
 
               <%# レビュー機能 %>
-            <div class="users-reviews">
-              <%= render 'reviews/average_review', review: @reviews %>
+            <div class="users-reviews mb-1">
+              <%= link_to user_reviews_path(@user) do %>
+                <%= render 'reviews/average_review', review: @reviews %>
+              <% end %>
             </div>
 
               <%# フォロー・フォロワー %>
