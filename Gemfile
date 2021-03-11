@@ -6,6 +6,7 @@ ruby "2.6.6"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 6.0.3", ">= 6.0.3.4"
 gem "aws-sdk-s3", "1.46.0", require: false
+gem 'fog-aws'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4.1'
 # Use Puma as the app server
