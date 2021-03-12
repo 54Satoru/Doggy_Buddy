@@ -6,6 +6,7 @@ CarrierWave.configure do |config|
   config.storage :fog
   config.fog_provider = 'fog/aws'
   config.fog_directory  = 'AWS_BUCKET'
+  config.asset_host = "https://s3.ap-northeast-1.amazonaws.com/54satoru-buket"
   config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
   config.fog_credentials = {
     provider: 'AWS',
