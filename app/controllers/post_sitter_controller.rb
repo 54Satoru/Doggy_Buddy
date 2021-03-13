@@ -7,7 +7,7 @@ class PostSitterController < ApplicationController
 
   def show
     @post = PostSitter.find(params[:id])
-    @user = User.find_by(params[:id])
+    @user = User.find(params[:id])
   end
 
   def new
