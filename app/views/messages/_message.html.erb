@@ -4,6 +4,8 @@
     <%= simple_format(h message.content) %>
   <% end %>
   <% if message.image.present? %>
-    <%= image_tag message.image.url %>
+    <%= link_to message.image.url, 'data-lightbox': message.image do %>
+      <%= image_tag message.image.url %>
+    <% end %>
   <% end %>
 </div>

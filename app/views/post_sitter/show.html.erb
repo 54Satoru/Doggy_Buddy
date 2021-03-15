@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
 
 
-      <div class="col-md-4 text-center post-profile-wrap">
+      <div class="col-lg-4 text-center post-profile-wrap">
         <%= link_to user_path(@post.user) do %>
           <div class="icon mb-2">
             <% if @user.image? %>
@@ -32,14 +32,16 @@
       </div>
 
 
-      <div class="col-md-8 post-text-wrap">
+      <div class="col-lg-8 post-text-wrap">
         <div class="post-show-inner">
           <div>
             <h2 class="post-show-title font-weight-bold text-dark text-center mb-3"><%= @post.title %></h2>
           </div>
           <div class="post-show-image text-center mb-5">
             <% if @post.image? %>
-              <%= image_tag @post.image.url, class: "img-fluid" %>
+              <%= link_to @post.image.url, 'data-lightbox': @post.image do %>
+                <%= image_tag @post.image.url, class: "img-fluid" %>
+              <% end %>
             <% else %>
               <%= image_tag '/assets/noimage.dog1.png' %>
             <% end %>

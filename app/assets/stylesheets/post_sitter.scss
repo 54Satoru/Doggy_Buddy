@@ -2,14 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.post-index-wrap a {
+//indexページ
+.post-index-wrap {
+  margin: 0 106px;
+  a {
   width: 100%;
   color: #727272;
-}
-
-.post-index-wrap a:hover {
+  }
+  a:hover {
   opacity: 0.8;
   color: #727272;
+  }
 }
 
 .media {
@@ -27,7 +30,20 @@
 }
 
 
+@media (max-width: 992px) {
+  .post-index-wrap {
+    margin: 0px;
+  }
+}
 
+@media (max-width: 768px) {
+  .media {
+    padding: 10px;
+  }
+}
+
+
+//showページ
 .post-show-inner {
   background-color: #efefef;
   padding: 20px 40px;
@@ -71,4 +87,21 @@
 
 .post-show-comment p {
   padding: 0px 10px;
+}
+
+
+@media (max-width: 992px) {
+  .post-profile-wrap {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-show-inner {
+    padding: 16px 10px;
+  }
+
+  h2.post-show-title {
+    font-size: 24px;
+  }
 }

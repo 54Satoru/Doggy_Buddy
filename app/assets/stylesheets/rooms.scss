@@ -27,6 +27,14 @@ div.room-index-item {
   margin: 4px 0;
 }
 
+.room-wrapper {
+  a {
+    color: #00bf8f;
+  }
+  a:hover {
+    color: #01916d;
+  }
+}
 
 .message img {
   inline-size: fit-content;
@@ -44,6 +52,9 @@ button#message-button {
   border-color: #00bf8f;
 }
 
+.input-paper-plane {
+  display: flex;
+}
 
 @media (max-width: 1200px) {
   .room-index-wrap {
