@@ -25,3 +25,9 @@ require('user/tab')
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+window.onpageshow = function (event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+};

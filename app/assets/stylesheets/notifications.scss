@@ -7,12 +7,17 @@
   padding: 0 200px;
 }
 
-.notification a {
-  color: #00bf8f;
+.notification {
+  a {
+    color: #00bf8f;
+  }
+  a:hover {
+    color: #01916d;
+  }
 }
 
 @media (max-width: 992px) {
-    .notification .justify-content-center {
+  .notification .justify-content-center {
     padding: 0 50px;
   }
 }

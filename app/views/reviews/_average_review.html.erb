@@ -2,13 +2,14 @@
 <span> <%= @reviews.count %> 件のレビュー</span>
 
 <script>
+
   $('.average-review-rating').raty({
-    starOff   : '<%= asset_path('star-off.png') %>',
-    starOn    : '<%= asset_path('star-on.png') %>',
-    starHalf  : '<%= asset_path('star-half.png') %>',
-    half      : true,
+    starOff: "<%= asset_path('star-off.png') %>",
+    starOn: "<%= asset_path('star-on.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    half: true,
     readOnly: true,
-    score: function() {
+    score: function () {
       return $(this).attr('data-score')
     }
   });
