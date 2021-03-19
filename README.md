@@ -161,4 +161,4 @@ URL: https://gentle-forest-02171.herokuapp.com
 - テストが少ない
 - コードのリファクタリング
 - RuboCopの導入ができていない
-- 
+- ER図をgemを使用しているのでgemを使わずにER図を作成する
