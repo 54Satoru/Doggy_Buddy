@@ -22,8 +22,7 @@ URL: https://gentle-forest-02171.herokuapp.com
 
 <br />
 
-また、預けている際の愛犬の様子が気になることから
-**「簡単に連絡が取れ、画像も送れるメッセージ機能があると便利」**と考えました。
+また、預けている際の愛犬の様子が気になることから **「簡単に連絡が取れ、画像も送れるメッセージ機能があると便利」** と考えました。
 この機能はユーザー同士で日程や時間を決めるときも使います。
 
 預かる側としては、空いた時間で副業として預かったり、犬を飼うことはできないけど犬と触れ合いたい、
@@ -142,6 +141,7 @@ URL: https://gentle-forest-02171.herokuapp.com
 <br />
 
 ## :orange_book: ER図
+[Doggy_Buddy ER図.pdf](https://github.com/54Satoru/Doggy_Buddy/files/6170234/Doggy_Buddy.ER.pdf)
 
 
 ## :blue_book: 今後追加したい機能、改善、気になっている点
