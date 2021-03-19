@@ -1,6 +1,7 @@
 # :feet: Doggy_Buddy
 DoggyBuddyは、忙しくて愛犬のお世話が出来ない飼い主と近くに住んでる愛犬家を繋ぐドッグシッターサービスです。
 
+![Doggy_Buddy top](https://user-images.githubusercontent.com/64883113/111764616-b9715500-88e6-11eb-80fb-9dd995d18502.jpg)
 
 
 <br />
@@ -141,7 +142,8 @@ URL: https://gentle-forest-02171.herokuapp.com
 <br />
 
 ## :orange_book: ER図
-[Doggy_Buddy ER図.pdf](https://github.com/54Satoru/Doggy_Buddy/files/6170234/Doggy_Buddy.ER.pdf)
+![Doggy_Buddy ER図](https://user-images.githubusercontent.com/64883113/111764151-3fd96700-88e6-11eb-83e0-a1b4c1d334e7.png)
+
 
 
 ## :blue_book: 今後追加したい機能、改善、気になっている点
