@@ -1,0 +1,162 @@
+digraph DoggyBuddy {
+rankdir = "LR";
+ranksep = "0.5";
+nodesep = "0.4";
+pad = "0.4,0.4";
+margin = "0,0";
+concentrate = "true";
+labelloc = "t";
+fontsize = "13";
+fontname = "Arial BoldMT";
+splines = "spline";
+node[ shape  =  "Mrecord" , fontsize  =  "10" , fontname  =  "ArialMT" , margin  =  "0.07,0.05" , penwidth  =  "1.0"];
+edge[ fontname  =  "ArialMT" , fontsize  =  "7" , dir  =  "both" , arrowsize  =  "0.9" , penwidth  =  "1.0" , labelangle  =  "32" , labeldistance  =  "1.8"];
+rankdir = "TB";
+label = "DoggyBuddy domain model\n\n";
+m_Entry [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">Entry</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="room_id">room_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+  <tr><td align="left" width="130" port="user_id">user_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+</table>
+}>];
+m_FavoriteC [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">FavoriteC</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="post_c_id">post_c_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+  <tr><td align="left" width="130" port="user_id">user_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+</table>
+}>];
+m_FavoriteSitter [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">FavoriteSitter</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="post_sitter_id">post_sitter_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+  <tr><td align="left" width="130" port="user_id">user_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+</table>
+}>];
+m_Message [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">Message</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="content">content <font face="Arial ItalicMT" color="grey60">text</font></td></tr>
+  <tr><td align="left" width="130" port="image">image <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="room_id">room_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+  <tr><td align="left" width="130" port="user_id">user_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+</table>
+}>];
+m_Notification [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">Notification</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="action">action <font face="Arial ItalicMT" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="checked">checked <font face="Arial ItalicMT" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="message_id">message_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
+  <tr><td align="left" width="130" port="post_c_id">post_c_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
+  <tr><td align="left" width="130" port="post_sitter_id">post_sitter_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
+  <tr><td align="left" width="130" port="room_id">room_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
+  <tr><td align="left" width="130" port="visited_id">visited_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+  <tr><td align="left" width="130" port="visitor_id">visitor_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+</table>
+}>];
+m_PostC [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">PostC</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="content">content <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="datetime">datetime <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="image">image <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="payment">payment <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="price">price <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="region">region <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="title">title <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="user_id">user_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+</table>
+}>];
+m_PostSitter [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">PostSitter</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="content">content <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="datetime">datetime <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="image">image <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="payment">payment <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="price">price <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="region">region <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="title">title <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="user_id">user_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+</table>
+}>];
+m_Relationship [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">Relationship</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="followed_id">followed_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+  <tr><td align="left" width="130" port="follower_id">follower_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+</table>
+}>];
+m_Review [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">Review</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="content">content <font face="Arial ItalicMT" color="grey60">text</font></td></tr>
+  <tr><td align="left" width="130" port="position">position <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="rate">rate <font face="Arial ItalicMT" color="grey60">float</font></td></tr>
+  <tr><td align="left" width="130" port="reviewee_id">reviewee_id <font face="Arial ItalicMT" color="grey60">integer ∗</font></td></tr>
+  <tr><td align="left" width="130" port="user_id">user_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+</table>
+}>];
+m_Room [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">Room</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="user_id">user_id <font face="Arial ItalicMT" color="grey60">integer ∗ FK</font></td></tr>
+</table>
+}>];
+m_User [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">User</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="email">email <font face="Arial ItalicMT" color="grey60">string ∗ U</font></td></tr>
+  <tr><td align="left" width="130" port="encrypted_password">encrypted_password <font face="Arial ItalicMT" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="image">image <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="profile">profile <font face="Arial ItalicMT" color="grey60">text</font></td></tr>
+  <tr><td align="left" width="130" port="profile_image_id">profile_image_id <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="remember_created_at">remember_created_at <font face="Arial ItalicMT" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="reset_password_sent_at">reset_password_sent_at <font face="Arial ItalicMT" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="reset_password_token">reset_password_token <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="username">username <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+</table>
+}>];
+  m_User -> m_PostC [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_User -> m_PostSitter [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_User -> m_Review [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_User -> m_FavoriteC [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_User -> m_FavoriteSitter [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_User -> m_Message [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_User -> m_Entry [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_User -> m_Notification [arrowhead = "normal", arrowtail = "none", weight = "4"];
+  m_User -> m_Relationship [arrowhead = "normal", arrowtail = "none", weight = "4"];
+  m_Room -> m_Entry [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_PostC -> m_FavoriteC [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_PostSitter -> m_FavoriteSitter [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Room -> m_Message [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_PostC -> m_Notification [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_PostSitter -> m_Notification [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Room -> m_Notification [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Message -> m_Notification [arrowhead = "normal", arrowtail = "none", weight = "1"];
+  m_Review -> m_Notification [arrowhead = "normal", arrowtail = "none", weight = "2"];
+}
