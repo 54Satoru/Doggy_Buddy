@@ -1,4 +1,8 @@
 class Review < ApplicationRecord
+  validates :content, presence: true
+  validates :rate, presence: true
+  validates :position, presence: true
+
   belongs_to :user
   has_many :notifications, dependent: :destroy
 

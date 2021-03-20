@@ -1,13 +1,20 @@
 class PostC < ApplicationRecord
-  mount_uploader :image, ImageUploader
+  #投稿時期が早いものから順に表示
+  default_scope -> { order(created_at: :desc) }
+
+  validates :title, presence: true
+  validates :region, presence: true
+  validates :datetime, presence: true
+  validates :price, presence: true
+  validates :payment, presence: true
+  validates :content, presence: true
+
   belongs_to :user
   
   has_many :favorite_cs, dependent: :destroy
   has_many :notifications, dependent: :destroy
-
-  #投稿時期が早いものから順に表示
-  default_scope -> { order(created_at: :desc) }
-
+  
+  mount_uploader :image, ImageUploader
 
   def create_notification_favorite_c!(current_user)
     temp = Notification.where(["visitor_id = ? and visited_id = ? and post_c_id = ? and action = ? ", current_user.id, user_id, id, 'favorite'])

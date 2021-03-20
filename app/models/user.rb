@@ -1,10 +1,8 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-
   #devise設定
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
+  validates :username, presence: true, length: { maximum: 15 }
   
   #image読み込み
   mount_uploader :image, ImageUploader
