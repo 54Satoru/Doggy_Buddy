@@ -108,7 +108,7 @@ document.addEventListener('turbolinks:load', () => {
     if (documentElement.scrollTop === 0 && showAdditionally) {
       showAdditionally = false
 
-      oldestMessageId = document.getElementsByClassName('message')[0].id.replace(/[^0-9]/g, '')
+      oldestMessageId = document.getElementsByClassName('message')[0].user_id.replace(/[^0-9]/g, '')
 
       $.ajax({
         type: 'GET',
