@@ -38,5 +38,11 @@
   $(window).on("popstate", function() {
     window.location.reload();
   })
+
+  window.onpageshow = function (event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
 </script>
 
