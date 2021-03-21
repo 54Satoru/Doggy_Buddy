@@ -4,7 +4,7 @@ require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
   config.storage :fog
-  config.fog_provider = 'fog/aws'
+  # config.fog_provider = 'fog/aws'
   config.fog_directory  = ENV['AWS_BUCKET']
   config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
   config.fog_credentials = {
