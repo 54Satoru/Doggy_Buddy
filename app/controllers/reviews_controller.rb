@@ -24,10 +24,6 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
-  
-  def destroy
-    
-  end
 
   private
 

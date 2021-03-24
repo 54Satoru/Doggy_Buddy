@@ -17,8 +17,11 @@ class PostSitterController < ApplicationController
   def create
     @post = PostSitter.new(post_params)
     @post.user_id = current_user.id
-    @post.save
-    redirect_to post_sitter_path(@post)
+    if @post.save
+      redirect_to post_sitter_path(@post)
+    else
+      render :new
+    end
   end
 
   def edit
