@@ -21,7 +21,7 @@
               <%# レビュー機能 %>
             <div class="users-reviews mb-1">
               <%= link_to user_reviews_path(@user) do %>
-                <%= render 'reviews/average_review', review: @reviews %>
+                <%= render 'reviews/average_review', review: @user %>
               <% end %>
             </div>
 
@@ -44,7 +44,7 @@
 
             <div class="currentuser-btn-col">
               <% if @user == current_user %>
-                <%= link_to 'メッセージ', rooms_path(), class: "users-bt" %>
+                <%= link_to 'メッセージ', rooms_path, class: "users-bt" %>
                 <%= link_to '編集', edit_user_registration_path, class: "users-bt" %>
               <% end %>
             </div>
