@@ -13,4 +13,8 @@
       return $(this).attr('data-score')
     }
   });
+
+  $(window).on("popstate", function (event) {
+    window.location.reload();
+  });
 </script>
