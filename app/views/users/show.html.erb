@@ -21,7 +21,7 @@
               <%# レビュー機能 %>
             <div class="users-reviews mb-1">
               <%= link_to user_reviews_path(@user) do %>
-                <%= render 'reviews/average_review', review: @user %>
+                <%= render 'reviews/average_review', review: @reviews %>
               <% end %>
             </div>
 

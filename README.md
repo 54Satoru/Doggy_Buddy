@@ -109,7 +109,7 @@ URL: https://gentle-forest-02171.herokuapp.com
 
 ### その他
   - レスポンシブ対応
-  - テスト
+  - テスト(RSpec)※実装中
 
 
 <br />
