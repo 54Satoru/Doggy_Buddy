@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     
     #レビュー
     @reviews = Review.where(reviewee_id: @user.id)
-    if @user.reviews.blank?
+    if @reviews.blank?
       @average_review = 0
     else
       @average_review = @reviews.average(:rate).to_f.round(1)

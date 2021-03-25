@@ -2,7 +2,7 @@
 <span> <%= @reviews.count %> 件のレビュー</span>
 
 <script>
-$(document).on('turbolinks:load', function() {
+
   $('.average-review-rating').raty({
     starOff: "<%= asset_path('star-off.png') %>",
     starOn: "<%= asset_path('star-on.png') %>",
@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function() {
       return $(this).attr('data-score')
     }
   });
-});
+
   $(window).on("popstate", function (event) {
     window.location.reload();
   });
