@@ -23,4 +23,7 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: db/production.pg
+  encoding: unicode
+  pool: 5
+  database: DOGGY_BUDDY_production
+  username: DOGGY_BUDDY
