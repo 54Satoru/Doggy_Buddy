@@ -18,8 +18,9 @@ class PostCController < ApplicationController
     @post = PostC.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to post_c_path(@post)
+      redirect_to post_c_path(@post), notice: "投稿に成功しました！！"
     else
+      flash[:alert] = "投稿に失敗しました！！"
       render :new
     end
   end

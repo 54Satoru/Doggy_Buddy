@@ -24,7 +24,7 @@
                 <li class="room-index-message">
                   <%= e.room.messages.order(created_at: :desc).take.try(:content) %>
                 </li>
-              </ul>
+            </ul>
             </div>
           </div>
         <% end %>
