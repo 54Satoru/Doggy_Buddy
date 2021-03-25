@@ -44,7 +44,7 @@
 
             <div class="currentuser-btn-col">
               <% if @user == current_user %>
-                <%= link_to 'メッセージ', rooms_path, class: "users-bt" %>
+                <%= link_to 'メッセージ', rooms_path(@user), class: "users-bt" %>
                 <%= link_to '編集', edit_user_registration_path, class: "users-bt" %>
               <% end %>
             </div>
