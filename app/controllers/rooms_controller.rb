@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
-  layout 'no_footer', only: :show
+  layout 'no_footer'
 
   def index
     @room = Room.all
