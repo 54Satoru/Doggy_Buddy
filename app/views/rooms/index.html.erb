@@ -10,7 +10,7 @@
         <%= link_to room_path(e.room.id) do %>
           <div class="row justify-content-start list-inline list-unstyled">
             <div class="icon list-inline-item">
-              <% if @user.image? %>
+              <% if e.user.image? %>
                 <%= image_tag e.user.image.url, size: 80 %>
               <% else %>
                 <%= image_tag "/assets/default.png", size: 80 %>
