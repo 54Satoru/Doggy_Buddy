@@ -119,3 +119,24 @@ document.addEventListener('turbolinks:load', () => {
     }
   }, {passive: true});
 })
+
+//画像を選択したらファイルを消すコマンド出現
+$(document).on('turbolinks:load', function() {
+  // アップロードするファイルを選択
+  $('input[type=file]').on('click',function() {
+    $('#clear').show();
+  });
+
+  // ユーザエージェント
+  var ua = navigator.userAgent;  
+  
+  // ファイル参照をクリア
+  $('#clear').on('click', function() {
+    $('input[type=file]').val('');
+    // IE バージョン判定 10以下
+    if (ua.match(/MSIE\s(7|8|9|10)\./i)) {
+      $('#input-group-append').html('<input type="file" name="userfile">');
+    }
+    $(this).hide();
+  });
+});
