@@ -1,7 +1,7 @@
 # :feet: Doggy_Buddy
 DoggyBuddyは、忙しくて愛犬のお世話が出来ない飼い主と近くに住んでる愛犬家を繋ぐドッグシッターサービスです。
 
-![Doggy_Buddy top](https://user-images.githubusercontent.com/64883113/111764616-b9715500-88e6-11eb-80fb-9dd995d18502.jpg)
+![- DoggyBuddy - top page - ](https://user-images.githubusercontent.com/64883113/112560385-6e8b9c00-8e16-11eb-94f4-a01cabce275b.png)
 
 
 <br />
