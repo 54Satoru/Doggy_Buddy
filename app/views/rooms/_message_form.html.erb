@@ -3,10 +3,11 @@
   <div class="input-group">
     <%= f.text_area :content, placeholder: "メッセージを入力して下さい" , class:"form-control", rows: '1', maxlength: '500' %>
 
-    <div class="input-group-append">
+    <div class="input-group-append", id='userfile_item'>
       <%= f.label :image, class: "input-group-text" do %>
         <i class="far fa-images"></i>
         <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+        <input type="button" id="clear" value="ファイルをクリアする">
       <% end %>
     </div>
 
